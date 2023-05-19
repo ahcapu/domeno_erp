@@ -1,0 +1,48 @@
+{
+  "name": "frank_v1",
+  "version": "1.0.0",
+  "description": "Domenos ERP with postgresql RDBMS",
+  "main": "app.js",
+  "scripts": {
+    "build": "yarn clean && tsc && yarn copy-files",
+    "clean": "rm -rf ./dist",
+    "copy-files": "copyfiles -u 1 src/views/* dist/",
+    "start": "MODE=production node dist/app.js",
+    "dev": "tsc-watch --onSuccess \"node dist/app.js\" "
+  },
+  "author": "Abdul Bari hitech-prime",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.6.2",
+    "@aws-sdk/client-s3": "^3.332.0",
+    "bcryptjs": "^2.4.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.2",
+    "pg": "^8.10.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.9.1",
+    "typeorm": "^0.3.12"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.0",
+    "@types/ejs": "^3.1.2",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.1",
+    "@types/morgan": "^1.9.4",
+    "@types/multer": "^1.4.7",
+    "@types/nodemailer": "^6.4.7",
+    "nodemon": "^2.0.21",
+    "tsc-watch": "^6.0.0",
+    "typescript": "^5.0.2"
+  }
+}

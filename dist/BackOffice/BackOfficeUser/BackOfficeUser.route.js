@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const BackOfficeUser_controller_1 = require("./BackOfficeUser.controller");
+const router = (0, express_1.Router)();
+router.post("/first", BackOfficeUser_controller_1.BackOfficeUserController.first);
+router.post("/signin", BackOfficeUser_controller_1.BackOfficeUserController.signIn);
+router.use(BackOfficeUser_controller_1.BackOfficeUserController.protect);
+router.patch("/update-device-token", BackOfficeUser_controller_1.BackOfficeUserController.updateDeviceToken);
+router.post("/signup", BackOfficeUser_controller_1.BackOfficeUserController.signUp);
+router.get("/", BackOfficeUser_controller_1.BackOfficeUserController.getAll);
+router.get("/:id", BackOfficeUser_controller_1.BackOfficeUserController.getOne);
+exports.default = router;
